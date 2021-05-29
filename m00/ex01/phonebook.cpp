@@ -8,43 +8,116 @@ void PhoneBook::strupper(std::string& str)
 
 void PhoneBook::promt()
 {
-	int			count = 0;
 	std::string	input;
 
-	while (true)
+	std::cout << "Please enter one of these commands: ADD SEARCH EXIT" << std::endl;
+	while (std::getline (std::cin, input))
 	{
-		std::cout << "👉 Please enter one of these commands: ADD SEARCH EXIT" << std::endl;
-		std::getline (std::cin, input);
 		strupper(input);
 		if (input == "SEARCH")
-			std::cout << "You entered " << input << "!" << std::endl << "Thank you!" << std::endl;
+			PhoneBook::search();
 		else if (input == "ADD")
 			{
 				if (count > 8)
-					std::cout << "☹️ can't hold any more contacts!" << std::endl;
-				addcontact(contacts);
+					std::cout << "can't hold any more contacts!" << std::endl;
+				addcontact(contacts[count]);
 				count++;
 			}
 		else if (input == "EXIT")
 			return ;
 		else
-			std::cout << "💩 You made a mistake!" << std::endl;
+			std::cout << "You made a mistake!" << std::endl;
+		std::cout << "Please enter one of these commands: ADD SEARCH EXIT" << std::endl;
 	}
+}
+
+void PhoneBook::PrintField(std::string value)
+{
+	if (value.length() > 9)
+	{
+		std::cout << value.substr(0, 9) << ".";
+		return ;
+	}
+	else
+	{
+		for (int i = 0 ; i < 10 - value.length(); i++)
+			std::cout << " ";
+		std::cout << value;
+	}
+}
+
+void PhoneBook::SearchHeader()
+{
+	std::cout << "_____________________________________________" << std::endl;
+	std::cout << "|     index|first name| last name|  nickname|" << std::endl;
+	std::cout << "_____________________________________________" << std::endl;
+	for (int i = 0; i < count; i++)
+	{
+		std::cout << "|         "<< i << "|";
+		PrintField(contacts[i].name);
+		std::cout << "|";
+		PrintField(contacts[i].last_name);
+		std::cout << "|";
+		PrintField(contacts[i].nickname);
+		std::cout << "|" << std::endl;
+	}
+}
+
+void PhoneBook::search()
+{
+	if (count == 0)
+	{
+		std::cout << "Phonebook is empty! There's nothing! Nothing at all!" << std::endl;
+		return ;
+	}
+	SearchHeader();
+	std::cout << "Choose contact!" << std::endl;
 }
 
 void PhoneBook::addcontact(Contacts& contacts)
 {
 	std::string	input;
+	bool		ok = false;
 
-	std::cout << "Enter name: ";
-	std::getline (std::cin, input);
-	contacts.name = input;
-	std::cout << "Enter last name: ";
-	std::getline (std::cin, input);
-	contacts.last_name = input;
-	std::cout << "Enter nickname: ";
-	std::getline (std::cin, input);
-	contacts.nickname = input;
+	std::cout << "count = " << count << std::endl ;
+	while (!ok)
+	{
+		std::cout << "Enter name: ";
+		std::getline (std::cin, input);
+		if (input.length())
+			{
+				contacts.name = input;
+				ok = true;
+			}
+		else
+			std::cout << "Stop it!" << std::endl;
+	}
+	ok = false;
+	while (!ok)
+	{
+		std::cout << "Enter last name: ";
+		std::getline (std::cin, input);
+		if (input.length())
+		{
+			contacts.last_name = input;
+			ok = true;
+		}
+		else
+			std::cout << "Stop it!" << std::endl;
+	}
+	ok = false;
+	while (!ok)
+	{
+		std::cout << "Enter nickname: ";
+		std::getline (std::cin, input);
+		if (input.length())
+		{
+			contacts.nickname = input;
+			ok = true;
+		}
+		else
+			std::cout << "Stop it!" << std::endl;
+	}
 	std::cout << "Enter login: ";
 	std::getline (std::cin, input);
 	contacts.login = input;
@@ -71,3 +144,9 @@ void PhoneBook::addcontact(Contacts& contacts)
 	contacts.darkest_secret = input;
 	std::cout << "thank you!" << std::endl;
 }
+
+PhoneBook::PhoneBook( void )
+{
+	count = 0;
+	return ;
+};

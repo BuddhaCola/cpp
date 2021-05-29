@@ -5,7 +5,7 @@ SRC		=	main.cpp\
 
 OBJ	=	$(SRC:.cpp=.o)
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = #-Wall -Wextra -Werror
 
 all: $(NAME)
 

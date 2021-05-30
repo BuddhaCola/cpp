@@ -64,6 +64,7 @@ void PhoneBook::SearchHeader()
 		PrintField(contacts[i].nickname);
 		std::cout << "|" << std::endl;
 	}
+	std::cout	<< "_____________________________________________" << std::endl;
 }
 
 void PhoneBook::search()
@@ -77,13 +78,21 @@ void PhoneBook::search()
 		return ;
 	}
 	SearchHeader();
-	std::cout << "Choose contact! " << std::endl;
+	std::cout << "Choose a contact you desire! " << std::endl;
 	std::getline (std::cin, input);
-	contactNumber = std::stoi(input) + 1;
-	if (contactNumber > 8 || contactNumber < 0 || input.length() > 2)
-		std::cout << "this is mistake!" << std::endl;
+	try
+		{
+			contactNumber = std::stoi(input) - 1;
+		}
+	catch (std::exception &err)
+		{
+			std::cout << "This number is not right" << std::endl;
+		}
+	if (contactNumber > 7 || contactNumber < 0 || contactNumber > count - 1)
+		std::cout << "This was a mistake!" << std::endl;
 	else
 		{
+			std::cout << contactNumber << std::endl;
 			std::cout << 
 				"name:           " << contacts[contactNumber].name << std::endl
 				<< "last name:      " << contacts[contactNumber].last_name << std::endl
@@ -108,7 +117,8 @@ void PhoneBook::addcontact(Contacts& contacts)
 	while (!ok)
 	{
 		std::cout << "Enter name: ";
-		std::getline (std::cin, input);
+		if (!std::getline (std::cin, input))
+			std::exit(0);
 		if (input.length())
 			{
 				contacts.name = input;
@@ -121,7 +131,8 @@ void PhoneBook::addcontact(Contacts& contacts)
 	while (!ok)
 	{
 		std::cout << "Enter last name: ";
-		std::getline (std::cin, input);
+		if (!std::getline (std::cin, input))
+			std::exit(0);
 		if (input.length())
 		{
 			contacts.last_name = input;
@@ -134,7 +145,8 @@ void PhoneBook::addcontact(Contacts& contacts)
 	while (!ok)
 	{
 		std::cout << "Enter nickname: ";
-		std::getline (std::cin, input);
+		if (!std::getline (std::cin, input))
+			std::exit(0);
 		if (input.length())
 		{
 			contacts.nickname = input;
@@ -144,30 +156,38 @@ void PhoneBook::addcontact(Contacts& contacts)
 			std::cout << "Stop it!" << std::endl;
 	}
 	std::cout << "Enter login: ";
-	std::getline (std::cin, input);
+	if (!std::getline (std::cin, input))
+		std::exit(0);
 	contacts.login = input;
 	std::cout << "Enter postal address: ";
-	std::getline (std::cin, input);
+	if (!std::getline (std::cin, input))
+		std::exit(0);
 	contacts.postal_address = input;
 	std::cout << "Enter email address: ";
-	std::getline (std::cin, input);
+	if (!std::getline (std::cin, input))
+		std::exit(0);
 	contacts.email_address = input;
 	std::cout << "Enter phone number: ";
-	std::getline (std::cin, input);
+	if (!std::getline (std::cin, input))
+		std::exit(0);
 	contacts.phone_number = input;
 	std::cout << "Enter birthday date: ";
-	std::getline (std::cin, input);
+	if (!std::getline (std::cin, input))
+		std::exit(0);
 	contacts.birthday_date = input;
 	std::cout << "Enter favorite meal: ";
-	std::getline (std::cin, input);
+	if (!std::getline (std::cin, input))
+		std::exit(0);
 	contacts.favorite_meal = input;
 	std::cout << "Enter underwear color: ";
-	std::getline (std::cin, input);
+	if (!std::getline (std::cin, input))
+		std::exit(0);
 	contacts.underwear_color = input;
 	std::cout << "Enter darkest secret: ";
-	std::getline (std::cin, input);
+	if (!std::getline (std::cin, input))
+		std::exit(0);
 	contacts.darkest_secret = input;
-	std::cout << "thank you!" << std::endl;
+	std::cout << "\nthank you!\n" << std::endl;
 }
 
 PhoneBook::PhoneBook( void )

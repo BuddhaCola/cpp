@@ -18,15 +18,15 @@ void PhoneBook::promt()
 		if (input == "SEARCH")
 			PhoneBook::search();
 		else if (input == "ADD")
+		{
+			if (count == 8)
+				std::cout << "can't hold any more contacts!" << std::endl;
+			else
 			{
-				if (count == 8)
-					std::cout << "can't hold any more contacts!" << std::endl;
-				else
-				{
-					contacts[count].addcontact();
-					count++;
-				}
+				contacts[count].addcontact();
+				count++;
 			}
+		}
 		else if (input == "EXIT")
 			return ;
 		else
@@ -37,7 +37,7 @@ void PhoneBook::promt()
 
 void PhoneBook::PrintField(std::string value)
 {
-	if (value.length() > 9)
+	if (value.length() > 10)
 	{
 		std::cout << value.substr(0, 9) << ".";
 		return ;
@@ -52,13 +52,13 @@ void PhoneBook::PrintField(std::string value)
 
 void PhoneBook::SearchHeader()
 {
-	std::cout << CYAN 
-				<< "┌──────────┬──────────┬──────────┬──────────┐" << std::endl
-				<< "│     index│first name│ last name│  nickname│" << std::endl
-				<< "├──────────┼──────────┼──────────┼──────────┤" << std::endl << RESET;
+	std::cout << CYAN
+	<< "┌──────────┬──────────┬──────────┬──────────┐" << std::endl
+	<< "│     index│first name│ last name│  nickname│" << std::endl
+	<< "├──────────┼──────────┼──────────┼──────────┤" << std::endl << RESET;
 	for (int i = 0; i < count; i++)
 	{
-		std::cout << CYAN << "│         "<< RESET << i + 1 << CYAN << "│" << RESET;
+		std::cout << CYAN << "│         " << RESET << i + 1 << CYAN << "│" << RESET;
 		PrintField(contacts[i].Get_name());
 		std::cout << CYAN << "│" << RESET;
 		PrintField(contacts[i].Get_last_name());
@@ -83,31 +83,31 @@ void PhoneBook::search()
 	std::cout << "Choose a contact you desire! " << std::endl;
 	std::getline (std::cin, input);
 	try
-		{
-			contactNumber = std::stoi(input) - 1;
-		}
+	{
+		contactNumber = std::stoi(input) - 1;
+	}
 	catch (std::exception &err)
-		{
-			std::cout << "This number is not right" << std::endl;
-		}
+	{
+		std::cout << "This number is not right" << std::endl;
+	}
 	if (contactNumber > 7 || contactNumber < 0 || contactNumber > count - 1)
 		std::cout << "This was a mistake!" << std::endl;
 	else
-		{
-			std::cout << 
-				CYAN "           name: " << RESET << contacts[contactNumber].Get_name() << std::endl
-				<< CYAN << "      last name: " << RESET << contacts[contactNumber].Get_last_name() << std::endl
-				<< CYAN << "       nickname: " << RESET << contacts[contactNumber].Get_nickname() << std::endl
-				<< CYAN << "          login: " << RESET << contacts[contactNumber].Get_login() << std::endl
-				<< CYAN << " postal address: " << RESET << contacts[contactNumber].Get_postal_address() << std::endl
-				<< CYAN << "  email address: " << RESET << contacts[contactNumber].Get_email_address() << std::endl
-				<< CYAN << "   phone number: " << RESET << contacts[contactNumber].Get_phone_number() << std::endl
-				<< CYAN << "  birthday date: " << RESET << contacts[contactNumber].Get_birthday_date() << std::endl
-				<< CYAN << "  favorite meal: " << RESET << contacts[contactNumber].Get_favorite_meal() << std::endl
-				<< CYAN << "underwear color: " << RESET << contacts[contactNumber].Get_underwear_color() << std::endl
-				<< CYAN << " darkest secret: " << RESET << contacts[contactNumber].Get_darkest_secret() << std::endl
-				<< std::endl;
-		}
+	{
+		std::cout << 
+			CYAN "           name: " << RESET << contacts[contactNumber].Get_name() << std::endl
+			<< CYAN << "      last name: " << RESET << contacts[contactNumber].Get_last_name() << std::endl
+			<< CYAN << "       nickname: " << RESET << contacts[contactNumber].Get_nickname() << std::endl
+			<< CYAN << "          login: " << RESET << contacts[contactNumber].Get_login() << std::endl
+			<< CYAN << " postal address: " << RESET << contacts[contactNumber].Get_postal_address() << std::endl
+			<< CYAN << "  email address: " << RESET << contacts[contactNumber].Get_email_address() << std::endl
+			<< CYAN << "   phone number: " << RESET << contacts[contactNumber].Get_phone_number() << std::endl
+			<< CYAN << "  birthday date: " << RESET << contacts[contactNumber].Get_birthday_date() << std::endl
+			<< CYAN << "  favorite meal: " << RESET << contacts[contactNumber].Get_favorite_meal() << std::endl
+			<< CYAN << "underwear color: " << RESET << contacts[contactNumber].Get_underwear_color() << std::endl
+			<< CYAN << " darkest secret: " << RESET << contacts[contactNumber].Get_darkest_secret() << std::endl
+			<< std::endl;
+	}
 }
 
 PhoneBook::PhoneBook( void )

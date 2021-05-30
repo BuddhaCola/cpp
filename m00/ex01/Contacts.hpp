@@ -1,8 +1,6 @@
 #ifndef CONTACTS_HPP
 #define CONTACTS_HPP
 
-// #include "PhoneBook.hpp"
-
 #include <iostream>
 class Contacts
 {
@@ -19,7 +17,6 @@ class Contacts
 		std::string underwear_color;
 		std::string darkest_secret;
 		void		strupper(std::string& str);
-		// void		fieldinput(std::string field);
 	public:
 		void		addcontact();
 		std::string Get_name();

@@ -1,4 +1,4 @@
-#include "phonebook.hpp"
+#include "PhoneBook.hpp"
 
 void PhoneBook::strupper(std::string& str)
 {
@@ -22,7 +22,7 @@ void PhoneBook::promt()
 					std::cout << "can't hold any more contacts!" << std::endl;
 				else
 				{
-					addcontact(contacts[count]);
+					contacts[count].addcontact();
 					count++;
 				}
 			}
@@ -43,7 +43,7 @@ void PhoneBook::PrintField(std::string value)
 	}
 	else
 	{
-		for (int i = 0 ; i < 10 - value.length(); i++)
+		for (int i = 0 ; i < 10 - (int)value.length(); i++)
 			std::cout << " ";
 		std::cout << value;
 	}
@@ -51,20 +51,20 @@ void PhoneBook::PrintField(std::string value)
 
 void PhoneBook::SearchHeader()
 {
-	std::cout	<< "_____________________________________________" << std::endl
-				<< "|     index|first name| last name|  nickname|" << std::endl
-				<< "_____________________________________________" << std::endl;
+	std::cout	<< "┌──────────┬──────────┬──────────┬──────────┐" << std::endl
+				<< "│     index│first name│ last name│  nickname│" << std::endl
+				<< "├──────────┼──────────┼──────────┼──────────┤" << std::endl;
 	for (int i = 0; i < count; i++)
 	{
-		std::cout << "|         "<< i + 1 << "|";
-		PrintField(contacts[i].name);
-		std::cout << "|";
-		PrintField(contacts[i].last_name);
-		std::cout << "|";
-		PrintField(contacts[i].nickname);
-		std::cout << "|" << std::endl;
+		std::cout << "│         "<< i + 1 << "│";
+		PrintField(contacts[i].Get_name());
+		std::cout << "│";
+		PrintField(contacts[i].Get_last_name());
+		std::cout << "│";
+		PrintField(contacts[i].Get_nickname());
+		std::cout << "│" << std::endl;
 	}
-	std::cout	<< "_____________________________________________" << std::endl;
+	std::cout	<< "└──────────┴──────────┴──────────┴──────────┘" << std::endl;
 }
 
 void PhoneBook::search()
@@ -94,100 +94,19 @@ void PhoneBook::search()
 		{
 			std::cout << contactNumber << std::endl;
 			std::cout << 
-				"name:           " << contacts[contactNumber].name << std::endl
-				<< "last name:      " << contacts[contactNumber].last_name << std::endl
-				<< "nickname:       " << contacts[contactNumber].nickname << std::endl
-				<< "login:          " << contacts[contactNumber].login << std::endl
-				<< "postal address: " << contacts[contactNumber].postal_address << std::endl
-				<< "email address:  " << contacts[contactNumber].email_address << std::endl
-				<< "phone number:   " << contacts[contactNumber].phone_number << std::endl
-				<< "birthday date:  " << contacts[contactNumber].birthday_date << std::endl
-				<< "favorite meal:  " << contacts[contactNumber].favorite_meal << std::endl
-				<< "underwear color:" << contacts[contactNumber].underwear_color << std::endl
-				<< "darkest secret: " << contacts[contactNumber].darkest_secret << std::endl
+				"name:           " << contacts[contactNumber].Get_name() << std::endl
+				<< "last name:      " << contacts[contactNumber].Get_last_name() << std::endl
+				<< "nickname:       " << contacts[contactNumber].Get_nickname() << std::endl
+				<< "login:          " << contacts[contactNumber].Get_login() << std::endl
+				<< "postal address: " << contacts[contactNumber].Get_postal_address() << std::endl
+				<< "email address:  " << contacts[contactNumber].Get_email_address() << std::endl
+				<< "phone number:   " << contacts[contactNumber].Get_phone_number() << std::endl
+				<< "birthday date:  " << contacts[contactNumber].Get_birthday_date() << std::endl
+				<< "favorite meal:  " << contacts[contactNumber].Get_favorite_meal() << std::endl
+				<< "underwear color:" << contacts[contactNumber].Get_underwear_color() << std::endl
+				<< "darkest secret: " << contacts[contactNumber].Get_darkest_secret() << std::endl
 				<< std::endl;
 		}
-}
-
-void PhoneBook::addcontact(Contacts& contacts)
-{
-	std::string	input;
-	bool		ok = false;
-
-	while (!ok)
-	{
-		std::cout << "Enter name: ";
-		if (!std::getline (std::cin, input))
-			std::exit(0);
-		if (input.length())
-			{
-				contacts.name = input;
-				ok = true;
-			}
-		else
-			std::cout << "This is ain't right!" << std::endl;
-	}
-	ok = false;
-	while (!ok)
-	{
-		std::cout << "Enter last name: ";
-		if (!std::getline (std::cin, input))
-			std::exit(0);
-		if (input.length())
-		{
-			contacts.last_name = input;
-			ok = true;
-		}
-		else
-			std::cout << "Just enter last name, dammit!" << std::endl;
-	}
-	ok = false;
-	while (!ok)
-	{
-		std::cout << "Enter nickname: ";
-		if (!std::getline (std::cin, input))
-			std::exit(0);
-		if (input.length())
-		{
-			contacts.nickname = input;
-			ok = true;
-		}
-		else
-			std::cout << "Stop it!" << std::endl;
-	}
-	std::cout << "Enter login: ";
-	if (!std::getline (std::cin, input))
-		std::exit(0);
-	contacts.login = input;
-	std::cout << "Enter postal address: ";
-	if (!std::getline (std::cin, input))
-		std::exit(0);
-	contacts.postal_address = input;
-	std::cout << "Enter email address: ";
-	if (!std::getline (std::cin, input))
-		std::exit(0);
-	contacts.email_address = input;
-	std::cout << "Enter phone number: ";
-	if (!std::getline (std::cin, input))
-		std::exit(0);
-	contacts.phone_number = input;
-	std::cout << "Enter birthday date: ";
-	if (!std::getline (std::cin, input))
-		std::exit(0);
-	contacts.birthday_date = input;
-	std::cout << "Enter favorite meal: ";
-	if (!std::getline (std::cin, input))
-		std::exit(0);
-	contacts.favorite_meal = input;
-	std::cout << "Enter underwear color: ";
-	if (!std::getline (std::cin, input))
-		std::exit(0);
-	contacts.underwear_color = input;
-	std::cout << "Enter darkest secret: ";
-	if (!std::getline (std::cin, input))
-		std::exit(0);
-	contacts.darkest_secret = input;
-	std::cout << "\nthank you!\n" << std::endl;
 }
 
 PhoneBook::PhoneBook( void )

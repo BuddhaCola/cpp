@@ -19,10 +19,9 @@ class Contacts
 		std::string underwear_color;
 		std::string darkest_secret;
 		void		strupper(std::string& str);
-		void		fieldinput(std::string field);
+		// void		fieldinput(std::string field);
 	public:
 		void		addcontact();
-		std::string PutField(std::string& input);
 		std::string Get_name();
 		std::string Get_last_name();
 		std::string Get_nickname();

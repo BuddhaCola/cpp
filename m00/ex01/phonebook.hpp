@@ -14,6 +14,5 @@ class PhoneBook
 		PhoneBook( void );
 	private:
 		void		strupper(std::string& str);
-		void		fieldinput(std::string field);
-		std::string PutField(std::string& input);
+		// void		fieldinput(std::string field);
 };

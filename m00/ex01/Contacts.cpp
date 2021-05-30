@@ -1,4 +1,5 @@
 #include "Contacts.hpp"
+#include "Colors.hpp"
 
 void Contacts::addcontact()
 {
@@ -7,7 +8,7 @@ void Contacts::addcontact()
 
 	while (!ok)
 	{
-		std::cout << "Enter name: ";
+		std::cout << CYAN << "Enter name: " << RESET;
 		if (!std::getline (std::cin, input))
 			std::exit(0);
 		if (input.length())
@@ -21,7 +22,7 @@ void Contacts::addcontact()
 	ok = false;
 	while (!ok)
 	{
-		std::cout << "Enter last name: ";
+		std::cout << CYAN << "Enter last name: " << RESET;
 		if (!std::getline (std::cin, input))
 			std::exit(0);
 		if (input.length())
@@ -35,7 +36,7 @@ void Contacts::addcontact()
 	ok = false;
 	while (!ok)
 	{
-		std::cout << "Enter nickname: ";
+		std::cout << CYAN << "Enter nickname: " << RESET;
 		if (!std::getline (std::cin, input))
 			std::exit(0);
 		if (input.length())
@@ -46,35 +47,35 @@ void Contacts::addcontact()
 		else
 			std::cout << "Stop it!" << std::endl;
 	}
-	std::cout << "Enter login: ";
+	std::cout << CYAN << "Enter login: " << RESET;
 	if (!std::getline (std::cin, input))
 		std::exit(0);
 	login = input;
-	std::cout << "Enter postal address: ";
+	std::cout << CYAN << "Enter postal address: " << RESET;
 	if (!std::getline (std::cin, input))
 		std::exit(0);
 	postal_address = input;
-	std::cout << "Enter email address: ";
+	std::cout << CYAN << "Enter email address: " << RESET;
 	if (!std::getline (std::cin, input))
 		std::exit(0);
 	email_address = input;
-	std::cout << "Enter phone number: ";
+	std::cout << CYAN << "Enter phone number: " << RESET;
 	if (!std::getline (std::cin, input))
 		std::exit(0);
 	phone_number = input;
-	std::cout << "Enter birthday date: ";
+	std::cout << CYAN << "Enter birthday date: " << RESET;
 	if (!std::getline (std::cin, input))
 		std::exit(0);
 	birthday_date = input;
-	std::cout << "Enter favorite meal: ";
+	std::cout << CYAN << "Enter favorite meal: " << RESET;
 	if (!std::getline (std::cin, input))
 		std::exit(0);
 	favorite_meal = input;
-	std::cout << "Enter underwear color: ";
+	std::cout << CYAN << "Enter underwear color: " << RESET;
 	if (!std::getline (std::cin, input))
 		std::exit(0);
 	underwear_color = input;
-	std::cout << "Enter darkest secret: ";
+	std::cout << CYAN << "Enter darkest secret: " << RESET;
 	if (!std::getline (std::cin, input))
 		std::exit(0);
 	darkest_secret = input;

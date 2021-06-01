@@ -1,5 +1,4 @@
 #include "Contacts.hpp"
-#include "Colors.hpp"
 
 void Contacts::addcontact()
 {

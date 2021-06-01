@@ -23,7 +23,7 @@ std::string	randomNameGen()
 	"Leland",
 	"Bobby"};
 	srand (time(NULL));
-	i = rand() % sizeof(nameList) / 24;
+	i = rand() % sizeof(nameList) / sizeof(nameList);
 	return (nameList[i]);
 }
 

@@ -4,14 +4,25 @@ std::string	randomAnnounceGen()
 {
 	int i;
 	std::string announceList[] = {
-	"Ползёт по полу",
-	"Тычет в глаз вилкой",
-	"Хочет домой",
-	"Залипает в телефоне"
+	"😖 ползёт по полу",
+	"🥄 атакует ложкой",
+	"😵 стоит в углу",
+	"📱 листает ленту",
+	"🧠 BRAAAIIIINS!!!",
 	};
-	srand (time(NULL));
+	srand ((unsigned int)std::chrono::high_resolution_clock::now().time_since_epoch().count());
 	i = rand() % sizeof(announceList) / 24;
 	return (" <" + announceList[i] + ">");
+}
+
+void		Zombie::setName(std::string name)
+{
+	this->_name = name;
+}
+
+void		Zombie::setType(std::string type)
+{
+	this->_type = type;
 }
 
 void		Zombie::announce()

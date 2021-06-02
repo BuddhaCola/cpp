@@ -3,9 +3,10 @@
 class ZombieHorde
 {
 	int		_N;
-	Zombie	horde[];
+	Zombie	*horde;
 
 	public:
+	void announce();
 	ZombieHorde(int n);
 	~ZombieHorde();
 };

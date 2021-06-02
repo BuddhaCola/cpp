@@ -10,7 +10,6 @@ std::string	randomAnnounceGen()
 	"📱 листает ленту",
 	"🧠 BRAAAIIIINS!!!",
 	};
-	srand ((unsigned int)std::chrono::high_resolution_clock::now().time_since_epoch().count());
 	i = rand() % sizeof(announceList) / 24;
 	return (" <" + announceList[i] + ">");
 }

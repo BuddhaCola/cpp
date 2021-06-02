@@ -22,8 +22,6 @@ std::string	randomNameGen()
 	"Donna",
 	"Leland",
 	"Bobby"};
-
-	srand ((unsigned int)std::chrono::high_resolution_clock::now().time_since_epoch().count());
 	i = rand() % sizeof(nameList) / 24;
 	return (nameList[i]);
 }

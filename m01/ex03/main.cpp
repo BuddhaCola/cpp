@@ -2,6 +2,7 @@
 
 int main ()
 {
-	ZombieHorde party(5);
+	srand (time(NULL));
+	ZombieHorde party(10);
 	party.announce();
 }

@@ -5,12 +5,14 @@ int main ()
 {
 	zombieEvent	party;
 	Zombie		*newguy;
-
+	
 	party.setZombieType("Heap of the dead");
-	newguy = party.newZombie("Heapster");
+	newguy = party.newZombie("💩 Heapster");
 	newguy->announce();
-	delete(newguy);
-	party.setZombieType("🏔🏔 Twin Peaks of the Dead");
+	party.setZombieType("Deadstack!");
 	party.randomChump();
+	party.randomChump();
+	party.randomChump();
+	delete(newguy);
 	return (0);
 }

@@ -1,15 +1,16 @@
 NAME	=	replace
-
 SRC		=	replace.cpp
-
-OBJ	=	$(SRC:.cpp=.o)
-
-CFLAGS = -Wall -Wextra -Werror
+OBJ		=	$(SRC:.cpp=.o)
+CC		=	clang++
+CFLAGS	=	-Wall -Wextra -Werror
 
 all: $(NAME)
 
+%.o : %.cpp
+	$(CC) -c $< -o $@
+
 $(NAME): $(OBJ)
-	clang++ $(CFLAGS) $(SRC) -o $(NAME)
+	$(CC) $(CFLAGS) $(SRC) -o $(NAME)
 
 clean:
 	rm -rf $(OBJ)

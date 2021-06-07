@@ -6,12 +6,13 @@ int main ()
 	Fixed b( a );
 	Fixed c;
 
+	int i = a.getRawBits();
+	i = 8;
 	c = b;
 	
 	std::cout << a.getRawBits() << std::endl;
 	std::cout << b.getRawBits() << std::endl;
 	std::cout << c.getRawBits() << std::endl;
 	
-	return 0;
 	return (0);
 }

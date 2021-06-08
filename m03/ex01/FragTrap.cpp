@@ -43,7 +43,7 @@ void	FragTrap::meleeAttack(std::string const & target)
 }
 void	FragTrap::takeDamage(unsigned int amount)
 {
-	std::cout << "Outch! " << _name << " got hit! " << amount << " HP lost!" << std::endl;
+	std::cout << "FR4G-TP " << _name << " got hit! " << amount << " HP lost!" << std::endl;
 }
 void	FragTrap::beRepaired(unsigned int amount)
 {

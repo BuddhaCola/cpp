@@ -11,12 +11,15 @@ class FragTrap {
 		int			_meleeAttackD;
 		int			_rangeAttackD;
 		int			_armorDamageReduction;
+		std::string	randomAttack();
 	public:
 		void	rangedAttack(std::string const & target);
-		void	meleeAttack(std::string const & targe);
+		void	meleeAttack(std::string const & target);
 		void	takeDamage(unsigned int amount);
 		void	beRepaired(unsigned int amount);
-		FragTrap::FragTrap(std::string name);
+		void	vaulthunter_dot_exe(std::string const & target);
+		FragTrap(std::string name);
+		FragTrap();
 		FragTrap(FragTrap const &);
 		FragTrap &operator = (const FragTrap&);
 		~FragTrap();

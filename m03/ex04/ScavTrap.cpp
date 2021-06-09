@@ -15,13 +15,13 @@ void	ScavTrap::challengeNewcomer()
 	 << std::endl;
 }
 
-ScavTrap::ScavTrap(std::string name) : ClapTrap( name )
+ScavTrap::ScavTrap(std::string name) : ClapTrap(100, 100, 100, 100, 1, name, "scavtrap", 30, 20, 5)
 {
-	std::cout << "👾" << _name << " identified itself in the world as Scavtrap" << std::endl;
+	std::cout << "👾" << _name << " identified itself in the world as " << " " + _type << std::endl;
 	std::cout << _name << " is guarding this area. He's the area guardian!" << std::endl;
 }
 
-ScavTrap::ScavTrap() : ClapTrap()
+ScavTrap::ScavTrap() : ClapTrap(100, 100, 100, 100, 1, "default scavtrap", "scavtrap", 30, 20, 5)
 {
 	std::cout << "👾" << _name << " identified itself in the world as Scavtrap" << std::endl;
 	std::cout << _name << " is guarding this area. He's the area guardian!" << std::endl;
@@ -42,6 +42,7 @@ ScavTrap &ScavTrap::operator = (const ScavTrap &orig)
 	this->_maxEnergyPoints = orig._maxEnergyPoints;
 	this->_level = orig._level;
 	this->_name = orig._name;
+	this->_type = orig._type;
 	this->_meleeAttackD = orig._meleeAttackD;
 	this->_rangeAttackD = orig._rangeAttackD;
 	this->_armorDamageReduction = orig._armorDamageReduction;
@@ -50,5 +51,5 @@ ScavTrap &ScavTrap::operator = (const ScavTrap &orig)
 
 ScavTrap::~ScavTrap()
 {
-	std::cout << "💀" << _name << "\'s destructor called" << std::endl;
+	std::cout << "💀" << _name << "\'s ScavTrap destructor called" << std::endl;
 }

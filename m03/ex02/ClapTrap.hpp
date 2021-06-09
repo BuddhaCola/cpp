@@ -4,7 +4,7 @@
 #include <iostream>
 
 class ClapTrap {
-	private:
+	protected:
 		unsigned int	_HP;
 		unsigned int	_maxHP;
 		unsigned int	_energyPoints;
@@ -24,25 +24,6 @@ class ClapTrap {
 		ClapTrap(const ClapTrap &);
 		ClapTrap &operator = (const ClapTrap&);
 		~ClapTrap();
-
-		unsigned int	get_HP() const;
-		unsigned int	get_maxHP() const;
-		unsigned int	get_energyPoints() const;
-		unsigned int	get_maxEnergyPoints() const;
-		unsigned int	get_level() const;
-		std::string		get_name() const;
-		unsigned int	get_meleeAttackD() const;
-		unsigned int	get_rangeAttackD() const;
-		unsigned int	get_armorDamageReduction() const;
-		void 			set_HP(const unsigned int &HP);
-		void 			set_maxHP(const unsigned int &maxHP);
-		void 			set_energyPoints(const unsigned int &energyPoints);
-		void 			set_maxEnergyPoints(const unsigned int &maxEnergyPoints);
-		void 			set_level(const unsigned int &level);
-		void 			set_name(const std::string &name);
-		void 			set_meleeAttackD(const unsigned int &meleeAttackD);
-		void 			set_rangeAttackD(const unsigned int &rangeAttackD);
-		void 			set_armorDamageReduction(const unsigned int &armorDamageReduction);
 };
 
 int	DiceRoll(int variants);

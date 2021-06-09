@@ -10,6 +10,6 @@ int main ()
 	
 	SuperTrap omar = SuperTrap("Omar");
 	omar.ninjaShoebox(ryu);
-	omar.vaulthunter_dot_exe("");
+	omar.vaulthunter_dot_exe("Nokia 1100");
 	return (0);
 }

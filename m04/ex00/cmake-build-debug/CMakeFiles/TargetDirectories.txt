@@ -1,3 +1,0 @@
-/Users/wtaylor/Documents/School10.5/projects/cpp/m04/ex00/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/Users/wtaylor/Documents/School10.5/projects/cpp/m04/ex00/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/wtaylor/Documents/School10.5/projects/cpp/m04/ex00/cmake-build-debug/CMakeFiles/ex00.dir

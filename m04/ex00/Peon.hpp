@@ -1,10 +1,9 @@
 #ifndef PEON_HPP
 # define PEON_HPP
 
-#include <iostream>
 #include "Victim.hpp"
 
-class Peon : public Victim {
+class Peon : virtual public Victim {
 public:
 	void getPolymorphed() const;
 	Peon(const std::string &name);

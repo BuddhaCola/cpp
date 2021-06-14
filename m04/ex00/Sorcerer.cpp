@@ -29,9 +29,7 @@ Sorcerer &Sorcerer::operator = (const Sorcerer&orig) {
 	return(*this);
 }
 
-Sorcerer::Sorcerer() {
-	std::cout << _name << ", " << _title << ", is born!" << std::endl;
-}
+Sorcerer::Sorcerer() {}
 
 Sorcerer::~Sorcerer() {
 	std::cout << _name << ", " << _title << ", is dead. Consequences will never be the same!" << std::endl;

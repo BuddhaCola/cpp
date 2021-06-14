@@ -10,6 +10,7 @@ class Sorcerer {
 private:
 	std::string _name;
 	std::string _title;
+	Sorcerer();
 
 public:
 	void	polymorph(Victim const &) const;
@@ -20,7 +21,6 @@ public:
 
 	Sorcerer(const Sorcerer &);
 	Sorcerer &operator = (const Sorcerer&);
-	Sorcerer();
 	~Sorcerer();
 };
 

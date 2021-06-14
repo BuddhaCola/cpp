@@ -7,13 +7,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d69f4f3e-b317-463d-97e4-e501d9b94e09" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.vscode/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vscode/settings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/m01/ex00/Pony.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/m01/ex00/Pony.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/m01/ex00/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/m01/ex00/main.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/m01/ex02/Zombie.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/m01/ex02/Zombie.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/m01/ex02/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/m01/ex02/main.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/m01/ex03/Zombie.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/m01/ex03/Zombie.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/m01/ex03/Zombie.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/m01/ex03/Zombie.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m04/ex00/Sorcerer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/m04/ex00/Sorcerer.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m04/ex00/Sorcerer.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/m04/ex00/Sorcerer.hpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,6 +52,7 @@
       <option name="presentableId" value="Default" />
       <updated>1623323907037</updated>
       <workItem from="1623323909272" duration="46000" />
+      <workItem from="1623347812564" duration="539000" />
     </task>
     <servers />
   </component>

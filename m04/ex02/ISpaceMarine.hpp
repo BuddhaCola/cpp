@@ -1,6 +1,8 @@
 #ifndef SPACEMARINE_HPP
 # define SPACEMARINE_HPP
 
+#include <iostream>
+
 class ISpaceMarine {
 public:
 	virtual		~ISpaceMarine() {}

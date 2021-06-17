@@ -16,7 +16,6 @@ void			TacticalMarine::meleeAttack() const {
 	std::cout << "* attacks with a chainsword *" << std::endl;
 }
 
-
 TacticalMarine::TacticalMarine(const TacticalMarine &orig) {
 	*this = orig;
 }

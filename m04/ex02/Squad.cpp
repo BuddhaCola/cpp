@@ -34,8 +34,14 @@ Squad::Squad(const Squad &orig) {
 }
 
 Squad &Squad::operator = (const Squad &orig) {
-	if (count)
-		for (int i = 0; i < count; i++)
+	if (this->squad != nullptr)
+	{
+		for (int i = 0; i < orig.count; i++)
+			delete squad[i];
+		delete [] squad;
+	}
+	if (orig.count)
+		for (int i = 0; i < orig.count; i++)
 			this->squad[i] = orig.squad[i];
 	return (*this);
 }

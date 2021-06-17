@@ -11,11 +11,14 @@ public:
 	void				use(int idx, ICharacter& target);
 	void				setname(std::string name);
 
-	Character(std::string name);
+	Character(std::string const &name);
 
 	Character(const Character &);
 	Character &operator = (const Character&);
 	~Character();
+protected:
+	std::string			_name;
+	AMateria			*_inventory[4];
 private:
 	Character();
 };

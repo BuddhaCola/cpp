@@ -12,8 +12,12 @@ int main()
 	robert.polymorph(jim);
 	robert.polymorph(joe);
 
-	Intern kirill("Кирилл");
+	Intern kirill("Oleg");
 	std::cout << kirill;
 	robert.polymorph(kirill);
+
+	jim = kirill;
+	std::cout << jim;
+
 	return 0;
 }

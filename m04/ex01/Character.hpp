@@ -6,10 +6,6 @@
 # include "Enemy.hpp"
 
 class Character {
-	private:
-		std::string	name;
-		int			ap;
-		AWeapon		*weapon;
 	public:
 		AWeapon		*getWeapon() const;
 		Character(std::string const & name);
@@ -23,6 +19,10 @@ class Character {
 		Character &operator= (const Character &);
 		Character();
 		virtual ~Character();
+	private:
+		std::string	name;
+		int			ap;
+		AWeapon		*weapon;
 };
 
 std::ostream & operator << (std::ostream &out, Character const & current );

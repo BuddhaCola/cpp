@@ -22,6 +22,4 @@ PlasmaRifle::PlasmaRifle() : AWeapon("Plasma Rifle", 5, 21)
 {}
 
 PlasmaRifle::~PlasmaRifle()
-{
-	std::cout << "PlasmaRifle destructor called" << std::endl;
-}
+{}

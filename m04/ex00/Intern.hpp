@@ -5,13 +5,13 @@
 
 class Intern : virtual public Victim {
 public:
-	void getPolymorphed() const;
+	virtual void getPolymorphed() const;
 	Intern(const std::string &name);
 
 	Intern(const Intern &);
 	Intern &operator = (const Intern&);
 	Intern();
-	~Intern();
+	virtual ~Intern();
 };
 
 std::ostream & operator << (std::ostream &out, Intern const & current );

@@ -22,6 +22,4 @@ PowerFist::PowerFist() : AWeapon("Power Fist", 8, 50)
 {}
 
 PowerFist::~PowerFist()
-{
-	std::cout << "PowerFist destructor called" << std::endl;
-}
+{}

@@ -5,11 +5,11 @@ void Intern::getPolymorphed() const {
 }
 
 Intern::Intern(const std::string &name) : Victim(name) {
-	std::cout << "Добрый день!" << std::endl;
+	std::cout << "Привет! Давно тут работаешь?" << std::endl;
 }
 
 Intern::Intern(const Intern &orig) {
-	std::cout << "Добрый день!" << std::endl;
+	std::cout << "Привет! Давно тут работаешь?" << std::endl;
 	*this = orig;
 }
 
@@ -28,6 +28,6 @@ Intern::~Intern() {
 
 std::ostream & operator << (std::ostream &out, Intern const & current )
 {
-	out << "Это, ну. В общем, звать меня " << current.getName() << ". Ну я там чёт программировал в университете на паскале. Джаваскрипт немного знаю." << std::endl;
+	out << "Звать меня " << current.getName() << ". Ну я раньше сайты верстал там. В универе чёт паскаль учили." << std::endl;
 	return (out);
 }

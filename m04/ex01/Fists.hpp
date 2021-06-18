@@ -5,13 +5,12 @@
 
 class Fists : public AWeapon {
 	public:
-		Fists(std::string const & name, int apcost, int damage);
 		void attack() const;
 
 		Fists(const Fists &);
 		Fists &operator = (const Fists&);
 		Fists();
-		~Fists();
+		virtual ~Fists();
 };
 
 #endif // !FISTS_HPP

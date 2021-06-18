@@ -2,7 +2,10 @@
 
 
 void Character::recoverAP() {
-	ap = 40;
+	if (ap + 10 >= 40)
+		ap = 40;
+	else
+		ap += 10;
 }
 
 void Character::equip(AWeapon *ptr) {
@@ -10,7 +13,11 @@ void Character::equip(AWeapon *ptr) {
 }
 
 void Character::attack(Enemy *enm) {
-	if (weapon && ap >= weapon->getAPCost()) {
+	if (enm == nullptr)
+		return ;
+	if (enm->getHP() == 0)
+		return ;
+	if (weapon && ap >= weapon->getAPCost() ) {
 		enm->takeDamage(weapon->getDamage());
 		std::cout << name << " attacks " << enm->getType() << " with a " << weapon->getName() << std::endl;
 		weapon->attack();
@@ -18,6 +25,8 @@ void Character::attack(Enemy *enm) {
 			delete enm;
 		ap -= weapon->getAPCost();
 	}
+	else if (ap < weapon->getAPCost())
+		std::cout << "not enough AP!" << std::endl;
 }
 
 std::string const &Character::getName() const {
@@ -36,7 +45,7 @@ Character::Character(std::string const & name) : name(name), ap(40), weapon(NULL
 
 Character::Character(const Character &orig) : name(orig.name), ap(orig.ap), weapon(orig.weapon) {}
 
-Character &Character::operator= (const Character &orig) {
+Character &Character::operator = (const Character &orig) {
 	this->name = orig.name;
 	this->ap = orig.ap;
 	this->weapon = orig.weapon;

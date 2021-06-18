@@ -46,6 +46,4 @@ AWeapon::AWeapon() : name("sample weapon"), apcost(0), damage(0)
 {}
 
 AWeapon::~AWeapon()
-{
-	std::cout << "AWeapon destructor called" << std::endl;
-}
+{}

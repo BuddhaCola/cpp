@@ -17,10 +17,10 @@ class AWeapon {
 		void setApcost(int apcost);
 		void setDamage(int damage);
 
+		AWeapon();
 		AWeapon(std::string const & name, int apcost, int damage);
 		AWeapon(const AWeapon &);
 		AWeapon &operator = (const AWeapon&);
-		AWeapon();
 		virtual ~AWeapon() = 0;
 };
 

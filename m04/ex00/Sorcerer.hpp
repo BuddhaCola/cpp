@@ -7,11 +7,6 @@
 
 class Sorcerer {
 
-private:
-	std::string _name;
-	std::string _title;
-	Sorcerer();
-
 public:
 	void	polymorph(Victim const &) const;
 	void	polymorph(Peon const &target) const;
@@ -22,6 +17,10 @@ public:
 	Sorcerer(const Sorcerer &);
 	Sorcerer &operator = (const Sorcerer&);
 	~Sorcerer();
+private:
+	std::string _name;
+	std::string _title;
+	Sorcerer();
 };
 
 std::ostream & operator << (std::ostream &out, Sorcerer const & current );

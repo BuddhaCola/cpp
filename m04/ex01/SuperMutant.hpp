@@ -10,7 +10,7 @@ class SuperMutant : public Enemy {
 		SuperMutant(const SuperMutant &);
 		SuperMutant &operator = (const SuperMutant&);
 		SuperMutant();
-		~SuperMutant();
+		virtual ~SuperMutant();
 };
 
 #endif // !SUPERMUTANT_HPP

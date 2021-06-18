@@ -5,13 +5,12 @@
 
 class PowerFist : public AWeapon {
 	public:
-		PowerFist(std::string const & name, int apcost, int damage);
 		void attack() const;
 
 		PowerFist(const PowerFist &);
 		PowerFist &operator = (const PowerFist&);
 		PowerFist();
-		~PowerFist();
+		virtual ~PowerFist();
 };
 
 #endif // !POWERFIST_HPP

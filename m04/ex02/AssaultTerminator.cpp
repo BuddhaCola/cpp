@@ -16,7 +16,6 @@ void			AssaultTerminator::meleeAttack() const {
 	std::cout << "* attacks with chainfists *" << std::endl;
 }
 
-
 AssaultTerminator::AssaultTerminator(const AssaultTerminator &orig) {
 	*this = orig;
 }

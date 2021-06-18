@@ -5,13 +5,13 @@
 
 class Peon : virtual public Victim {
 public:
-	void getPolymorphed() const;
+	virtual void getPolymorphed() const;
 	Peon(const std::string &name);
 
 	Peon(const Peon &);
 	Peon &operator = (const Peon&);
 	Peon();
-	~Peon();
+	virtual ~Peon();
 };
 
 #endif // !PEON_HPP

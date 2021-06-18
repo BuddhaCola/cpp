@@ -2,7 +2,7 @@
 
 void Fists::attack() const
 {
-	std::cout << "* pschhh... SBAM! *" << std::endl;
+	std::cout << "* хдыщ *" << std::endl;
 }
 
 Fists::Fists(const Fists &orig)
@@ -18,10 +18,8 @@ Fists &Fists::operator = (const Fists&orig)
 	return(*this);
 }
 
-Fists::Fists() : AWeapon("Power Fist", 8, 50)
+Fists::Fists() : AWeapon("fists", 4, 3)
 {}
 
 Fists::~Fists()
-{
-	std::cout << "Fists destructor called" << std::endl;
-}
+{}

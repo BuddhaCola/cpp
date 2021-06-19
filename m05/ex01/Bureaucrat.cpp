@@ -1,11 +1,7 @@
 #include "Bureaucrat.hpp"
 
 void Bureaucrat::signForm(Form &a) {
-	// try {
-		a.beSigned(*this);
-	// }
-	// catch ()
-	// {}
+	a.beSigned(*this);
 }
 
 class	Bureaucrat::GradeTooHighException : public std::exception {

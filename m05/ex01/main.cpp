@@ -11,9 +11,9 @@ int main () {
 			simpledimple.signForm(fgramota);
 			std::cout << simpledimple << std::endl<< fgramota << std::endl;
 		}
-		catch (std:: exception &p)
+		catch (std:: exception &problem)
 		{
-			p.what();
+			problem.what();
 		}
 	}
 }

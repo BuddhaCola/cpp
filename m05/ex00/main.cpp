@@ -3,8 +3,8 @@
 int main () {
 	try 
 		{
-			Bureaucrat simpledimple = Bureaucrat("Jenifffffer", 150);
-			simpledimple.downgrade();
+			Bureaucrat simpledimple = Bureaucrat("Jenifffffer", 1);
+			simpledimple.upgrade();
 		}
 	catch (std::exception &e)
 	{

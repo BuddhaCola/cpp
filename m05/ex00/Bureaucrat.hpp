@@ -12,6 +12,8 @@ class Bureaucrat {
 		int					getGrade() const;
 		void				upgrade();
 		void				downgrade();
+		class				GradeTooHighException;
+		class				GradeTooLowException;
 
 		Bureaucrat(std::string name, int grade);
 

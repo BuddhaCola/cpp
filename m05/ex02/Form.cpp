@@ -64,33 +64,12 @@ void	Form::setSigned(bool value) {
 	_signed = value;
 }
 
-// void	Form::setName(std::string value) {
-// 	_name = value;
-// }
-// void	Form::setGrade(int value) {
-// 	_sign_grade = value;
-// }
-// void	Form::setExecGrade(int value) {
-// 	_exec_sign_grade = value;
-// }
-
 Form::Form(std::string name, std::string target, int grade, int exec_grade) : _name(name), _target(target), _sign_grade(grade), _exec_grade(exec_grade), _signed(false) {
 }
-
-// Form::Form(const Form &orig) : _name(orig.getName()), _sign_grade(orig.getGrade()), _signed(orig.getSigned()) {
-// }
-
-// Form Form::operator = (Form &orig) {
-// 	_signed = orig.getSigned();
-// 	return(*this);
-// }
-
-// Form::~Form() {
-// }
 
 std::ostream &operator << (std::ostream &out, Form const & current ) {
 	char	*status = NULL;
 	current.getSigned() == true ? status = (char *)"signed" : status = (char *)"not signed";
-	out << "Form: " << current.getName() << "; Grade: " << current.getGrade() << "; Status: " << status << std::endl;
+	out << "Form: " << current.getName() << "; Target: " << current.getTarget() << "; Signing grade: " << current.getGrade() << "; Execution grade: " << current.getExecGrade() << "; Status: " << status << std::endl;
 	return out;
 }

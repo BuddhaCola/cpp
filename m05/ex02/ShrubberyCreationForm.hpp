@@ -12,7 +12,6 @@ class ShrubberyCreationForm : public Form {
 		ShrubberyCreationForm &operator = (const ShrubberyCreationForm &);
 		~ShrubberyCreationForm();
 	private:
-		// int exec_level;
 		ShrubberyCreationForm();
 };
 

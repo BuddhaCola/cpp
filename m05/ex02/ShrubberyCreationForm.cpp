@@ -36,7 +36,7 @@
 		std::string filename = this->getTarget() +  "_shrubbery";
 		std::cout << GOOD << executor.getName() << " executes " << this->getName()  << RESET <<std::endl;
 		std::ofstream file(filename);
-		file << "test";
+		file <<"ДЕРЕВО!!!";
 		file.close();
 	}
  }

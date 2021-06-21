@@ -1,18 +1,18 @@
-#include "Form.hpp"
+#include "AForm.hpp"
 
-const char *Form::GradeTooHighException::what() const throw() {
+const char *AForm::GradeTooHighException::what() const throw() {
 	return ("Grade Too High!");
 }
 
-const char *Form::GradeTooLowException::what() const throw() {
+const char *AForm::GradeTooLowException::what() const throw() {
 	return ("Grade Too Low!");
 }
 
-const char *Form::notSignedException::what() const throw() {
+const char *AForm::notSignedException::what() const throw() {
 	return ("Not Signed!");
 }
 
-void	Form::beSigned(Bureaucrat &bur){
+void	AForm::beSigned(Bureaucrat &bur){
 	char *unacceptable = NULL;
 	try {
 		if (bur.getGrade() > _sign_grade) {
@@ -40,36 +40,36 @@ void	Form::beSigned(Bureaucrat &bur){
 	}
 }
 
-std::string	Form::getName() const {
+std::string	AForm::getName() const {
 	return(_name);
 }
 
-std::string	Form::getTarget() const {
+std::string	AForm::getTarget() const {
 	return (_target);
 }
 
-bool Form::getSigned() const {
+bool AForm::getSigned() const {
 	return(_signed);
 }
 
-int	Form::getGrade() const {
+int	AForm::getGrade() const {
 	return(_sign_grade);
 }
 
-int	Form::getExecGrade() const {
+int	AForm::getExecGrade() const {
 	return(_exec_grade);
 }
 
-void	Form::setSigned(bool value) {
+void	AForm::setSigned(bool value) {
 	_signed = value;
 }
 
-Form::Form(std::string name, std::string target, int grade, int exec_grade) : _name(name), _target(target), _sign_grade(grade), _exec_grade(exec_grade), _signed(false) {
+AForm::AForm(std::string name, std::string target, int grade, int exec_grade) : _name(name), _target(target), _sign_grade(grade), _exec_grade(exec_grade), _signed(false) {
 }
 
-std::ostream &operator << (std::ostream &out, Form const & current ) {
+std::ostream &operator << (std::ostream &out, AForm const & current ) {
 	char	*status = NULL;
 	current.getSigned() == true ? status = (char *)"signed" : status = (char *)"not signed";
-	out << "Form: " << current.getName() << "; Target: " << current.getTarget() << "; Signing grade: " << current.getGrade() << "; Execution grade: " << current.getExecGrade() << "; Status: " << status << std::endl;
+	out << "Form: " << current.getName() << "; Target: " << current.getTarget() << "; Signing grade: " << current.getGrade() << "; Execution grade: " << current.getExecGrade() << "; Status: " << status;
 	return out;
 }

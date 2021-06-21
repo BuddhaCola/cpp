@@ -71,6 +71,6 @@ Form::~Form() {
 std::ostream &operator << (std::ostream &out, Form const & current ) {
 	char	*status = NULL;
 	current.getSigned() == true ? status = (char *)"signed" : status = (char *)"not signed";
-	out << "Form: " << current.getName() << "; Grade: " << current.getGrade() << "; Status: " << status << std::endl;
+	out << "Form: " << current.getName() << "; Grade: " << current.getGrade() << "; Status: " << status;
 	return out;
 }

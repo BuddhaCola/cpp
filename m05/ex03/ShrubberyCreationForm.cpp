@@ -27,13 +27,13 @@
 	}
 	if (unacceptable)
 	{
-		std::cout << BAD << executor.getName() << " cannot execute " << this->getName() << " because " << unacceptable << " (need " << this->getExecGrade() << ", got " << executor.getGrade() << ")"  << std::endl;
+		std::cout << BAD << executor.getName() << " cannot execute " << this->getName() << " because " << unacceptable << " (need " << this->getExecGrade() << ", got " << executor.getGrade() << ")" << std::endl;
 		return ;
 	}
 	else
 	{
 		std::string filename = this->getTarget() +  "_shrubbery";
-		std::cout << GOOD << executor.getName() << " executes " << this->getName()  << RESET <<std::endl;
+		std::cout << GOOD << executor.getName() << " executes " << this->getName()  << RESET << std::endl;
 		std::ofstream file(filename);
 		file
 		<< "       _-_" << std::endl

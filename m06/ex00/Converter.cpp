@@ -15,17 +15,17 @@ void Converter::interpret () {
 		catch (std::exception) {
 			_double_str << "impossible";
 		}
-		if (_double_val > 33 && _double_val < 126)
+		if (static_cast<char>(_double_val) >= 32 && static_cast<char>(_double_val) <= 126)
 			_ch_str << '\'' << static_cast<char>(_double_val) << '\'';
 		else
 			{
-				if (_double_val < 0 || _double_val > 127)
+				if (static_cast<char>(_double_val) < 0 || static_cast<char>(_double_val) > 127)
 					_ch_str << "impossible";
 				else
 					_ch_str << "Non displayable";
 			}
 	}
-	if (_double_val >= INT32_MAX || _double_val <= INT32_MIN)
+	if (static_cast<int>(_double_val) >= INT32_MAX ||static_cast<int>(_double_val) <= INT32_MIN)
 		_int_str << "impossible";
 	else
 		_int_str << static_cast<int>(_double_val);

@@ -25,7 +25,7 @@ int main () {
 	holder = serialize(&foo);
 	ptr = deserialize(holder);
 	if (ptr == &foo)
-		std::cout << &foo << " and " << ptr << " have same adresses. Int value: " << holder << std::endl;
+		std::cout << &foo << " and " << ptr << " are same adresses. Int value: " << holder << std::endl;
 	else
 		std::cout << &foo << " and " << ptr << " are different adresses" << std::endl;
 	std::cout << "\033[0m\033[35m" << ptr->value << std::endl;

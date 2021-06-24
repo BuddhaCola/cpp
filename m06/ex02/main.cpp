@@ -19,24 +19,16 @@ void identify(Base* p) {
 	A *a = NULL;
 	B *b = NULL;
 	C *c = NULL;
-	try {
-		*a = dynamic_cast<A&>(*p);
+
+	a = dynamic_cast<A *>(p);
+	if (a)
 		std::cout << "pointer identifyer: it's A!" << std::endl;
-	}
-	catch (std::bad_cast) {
-	}
-	try {
-		*b = dynamic_cast<B&>(*p);
+	b = dynamic_cast<B *>(p);
+	if (b)
 		std::cout << "pointer identifyer: it's B!" << std::endl;
-	}
-	catch (std::bad_cast) {
-	}
-	try {
-		*c = dynamic_cast<C&>(*p);
+	c = dynamic_cast<C *>(p);
+	if (c)
 		std::cout << "pointer identifyer: it's C!" << std::endl;
-	}
-	catch (std::bad_cast) {
-	}
 }
 
 void identify(Base& p) {
